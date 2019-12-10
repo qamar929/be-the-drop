@@ -9,6 +9,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.database.Cursor;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -19,6 +20,7 @@ import android.provider.MediaStore;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
@@ -31,21 +33,34 @@ import java.util.List;
 
 public class DonorHomeActivity extends AppCompatActivity {
     private DrawerLayout drawer;
-
-    Spinner spinner;
+    static  final String KEY_NAME="name";
+    static  final String KEY_IMG="image";
+    EditText categorySelected;
     private ImageView imageView;
     Button selectPhoto;
     RadioGroup radioGroupCondition;
     RadioButton selectedButton;
+
+    String Name;
+    int img;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_donor_home);
-
+        SharedPreferences pref = getApplicationContext().getSharedPreferences("MyPref", 0); // 0 - for private mode
+        SharedPreferences.Editor editor = pref.edit();
        Toolbar toolbar = (Toolbar) findViewById(R.id.Donortoolbar);
       setSupportActionBar(toolbar);
+      categorySelected =(EditText) findViewById(R.id.categorySelected);
 
+      Name = pref.getString(KEY_NAME, null); // getting String
+       img= pref.getInt(KEY_IMG, -1); // getting Integer
 
+        categorySelected.setText(Name);
+        editor.remove(KEY_NAME); // will delete key name
+        editor.remove(KEY_IMG); // will delete key email
+
+        editor.commit();
         //drawer = findViewById(R.id.drawer_layout);
 
        // ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(this, drawer, toolbar,
@@ -53,12 +68,9 @@ public class DonorHomeActivity extends AppCompatActivity {
      //   drawer.addDrawerListener(toggle);
      //   toggle.syncState();
 
-        addCategoryiesOnSpinner();
 
-       Toast.makeText(DonorHomeActivity.this,
-                "OnClickListener : " +
-                        "\nSpinner 1 : "+ String.valueOf(spinner.getSelectedItem()),
-                Toast.LENGTH_SHORT).show();
+
+
 
 
         imageView = (ImageView) findViewById(R.id.my_avatar);
@@ -147,20 +159,6 @@ super.onActivityResult(requestCode, resultCode, data);
     }
 
 
-    public void addCategoryiesOnSpinner() {
-
-        spinner = (Spinner) findViewById(R.id.CategorySpinner);
-        List<String> list = new ArrayList<String>();
-        list.add("Garments");
-        list.add("Books");
-        list.add("sports");
-        list.add("shoes");
-        list.add("other");
-        ArrayAdapter<String> dataAdapter = new ArrayAdapter<String>(this,
-                android.R.layout.simple_spinner_item, list);
-        dataAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinner.setAdapter(dataAdapter);
-    }
 
 
     public void SelectCondition() {

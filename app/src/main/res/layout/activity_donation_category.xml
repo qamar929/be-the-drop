@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DonationCategory">
+
+
+    <androidx.appcompat.widget.Toolbar
+
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:id="@+id/categoryToolbar"
+        android:background="@color/colorPrimary"
+        layout="@layout/toolbarmain"
+        app:titleTextColor ="#FFFF"
+        app:title = "Donation Category"
+
+        />
+    <GridView
+        android:id="@+id/categoryGridView"
+        android:numColumns="3"
+        android:layout_below="@+id/categoryToolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+
+</RelativeLayout>

@@ -21,45 +21,56 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="wrap_content"
             android:orientation="vertical">
 
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal">
 
-            <TextView
+            <androidx.appcompat.widget.AppCompatCheckedTextView
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Choose a Category"
+                android:layout_height="match_parent"
+                android:text="Selected Category  "
                 android:textSize="18dp"/>
 
-            <Spinner
-                android:layout_marginTop="10sp"
-                android:id="@+id/CategorySpinner"
+            <androidx.appcompat.widget.AppCompatEditText
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/categorySelected"
+
+                />
+</LinearLayout>
+
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                />
+                android:orientation="horizontal">
 
-            <TextView
+            <androidx.appcompat.widget.AppCompatCheckedTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Quantity of items"
+                android:text="Quantity of items   "
                 android:textSize="18dp"/>
 
-            <EditText
+            <androidx.appcompat.widget.AppCompatEditText
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="enter quantity"
                 android:textSize="18dp"
                 />
+            </LinearLayout>
 
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 >
-                <TextView
+                <androidx.appcompat.widget.AppCompatCheckedTextView
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:hint="Condition    "
+                    android:hint="Condition   "
                     android:textSize="18dp"
                     />
 
@@ -68,14 +79,14 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content" >
 
-                    <RadioButton
+                    <androidx.appcompat.widget.AppCompatRadioButton
                         android:id="@+id/radioNew"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="New"
                         android:checked="true" />
 
-                    <RadioButton
+                    <androidx.appcompat.widget.AppCompatRadioButton
                         android:id="@+id/radioUsed"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -88,14 +99,24 @@
 
             </LinearLayout>
 
-            <EditText
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                >
+            <androidx.appcompat.widget.AppCompatCheckedTextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Description  "
+                android:textSize="18dp"/>
+            <androidx.appcompat.widget.AppCompatEditText
                 android:id="@+id/Description"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:ems="10"
                 android:hint="description"
-                android:text="Name" />
-
+               />
+            </LinearLayout>
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -103,7 +124,7 @@
 
                 >
 
-                <Button
+                <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/selectPhoto"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -121,33 +142,41 @@
 
             </LinearLayout>
 
-            <TextView
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+            <androidx.appcompat.widget.AppCompatCheckedTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Price: "
-                android:textSize="14dp"/>
+                android:text="Price  "
+                android:textSize="18dp"/>
 
-            <EditText
+            <androidx.appcompat.widget.AppCompatEditText
                 android:id="@+id/price"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:hint="enter price"
                 />
-
+            </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:gravity="center"
+                android:layout_marginTop="20sp"
 
                 >
-                <Button
+                <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/AddBasket"
+
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="Add to Basket"
                     android:textSize="20dp"
                     />
 
-                <Button
+                <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/ViewBasket"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
