@@ -24,6 +24,7 @@ import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.Toast;
+import androidx.appcompat.widget.Toolbar;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -41,8 +42,8 @@ public class DonorHomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_donor_home);
 
-       /// Toolbar toolbar = (Toolbar) findViewById(R.id.Donortoolbar);
-    //   setSupportActionBar(toolbar);
+       Toolbar toolbar = (Toolbar) findViewById(R.id.Donortoolbar);
+      setSupportActionBar(toolbar);
 
 
         //drawer = findViewById(R.id.drawer_layout);
@@ -103,7 +104,7 @@ public class DonorHomeActivity extends AppCompatActivity {
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 
-
+super.onActivityResult(requestCode, resultCode, data);
         if(resultCode != RESULT_CANCELED) {
             switch (requestCode) {
                 case 0:
