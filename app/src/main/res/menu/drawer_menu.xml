@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="wrap_content"
+ android:layout_width="wrap_content"
+    >
+
+
+    <group>
+    <item android:id="@+id/profile"
+        android:icon="@drawable/photoicon"
+        android:title="Profile"/>
+    <item android:id="@+id/DonationHistory"
+        android:icon="@drawable/photoicon"
+        android:title="Donation History"/>
+
+        <item android:id="@+id/DonationRequest"
+            android:icon="@drawable/photoicon"
+            android:title="Donation Request"/>
+
+    </group>
+
+    <group>
+    <item android:id="@+id/About"
+        android:icon="@drawable/photoicon"
+        android:title="About"/>
+
+    <item android:id="@+id/logout"
+        android:icon="@drawable/photoicon"
+        android:title="Logout"/>
+    </group>
+</menu>
